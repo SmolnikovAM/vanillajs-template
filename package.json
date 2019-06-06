@@ -4,7 +4,8 @@
   "description": "template for VanillaJS",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "verify": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,41 @@
   "bugs": {
     "url": "https://github.com/SmolnikovAM/vanillajs-template/issues"
   },
-  "homepage": "https://github.com/SmolnikovAM/vanillajs-template#readme"
+  "homepage": "https://github.com/SmolnikovAM/vanillajs-template#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@types/jest": "^24.0.13",
+    "autoprefixer": "^9.6.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "css-loader": "^2.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.17.3",
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^2.4.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.2.0",
+    "postcss-loader": "^3.0.0",
+    "precss": "^4.0.0",
+    "prettier": "^1.17.1",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run verify"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier -c",
+      "eslint"
+    ]
+  }
 }
